@@ -11,4 +11,5 @@ def index(request):
             summ = Summarizer().summary(form.cleaned_data['content'], form.cleaned_data['num_sentences'])
             new_form = TextForm()
             return render(request, 'summarizer/index.html', dict(form=new_form, summary=summ))
+
     return render(request, 'summarizer/index.html', dict(form=TextForm(), summary=""))

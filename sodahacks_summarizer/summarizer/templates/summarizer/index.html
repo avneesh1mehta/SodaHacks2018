@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,25 +8,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="Avneesh Mehta and Shaurya Sanghavi" content="text summarizer">
-
     <title>Summarizer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css">
 
   </head>
 
   <body>
-    <div>
-      <form action="" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Submit"/>
-       </form>
-       <br>
-        <div>
-          <p>
-            {{ summary }}
-          </p>
+
+    <header class="masthead text-center text-white">
+      <div class="container mx-auto">
+        <div class="row" style="color: white;">
+          <div class="mx-auto">
+            <h1 class="text-success" style="padding-top: 50px;">
+              Summarize that LONG ASS reading assignment
+            </h1>
+            <hr>
+          </div>
         </div>
-    </div>
+        <div class="row" style="color: white;">
+          <div class="text-center mx-auto">
+            <form class="form-group text-center" action="" method="post">
+              {% csrf_token %}
+              {% for field in form %}
+                <h5 class="text-success">{{ field.label }}</h5>
+                <div class="col-xs-12 text-black" style="padding-bottom: 30px;">
+                  <br>
+                  {{ field }}
+                </div>
+              {% endfor %}
+              <div class="col-xs-12">
+                <input class="btn btn-outline-danger" type="submit" value="Submit"/>
+              </div>
+             </form>
+             <br>
+              <div class="col-xs-12" style="padding-bottom: 50px;">
+                <h5 class="text-success">
+                  {{ summary }}
+                </h5>
+              </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-creative/3.3.7/js/creative.min.js"></script>
+
   </body>
 
 </html>
