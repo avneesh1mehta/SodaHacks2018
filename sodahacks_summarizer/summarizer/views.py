@@ -5,7 +5,6 @@ from .summarizer import Summarizer
 
 def index(request):
     if request.method == 'POST':
-        print('\nPOST\n')
         form = TextForm(request.POST)
         if form.is_valid():
             summ = Summarizer().summary(form.cleaned_data['content'], form.cleaned_data['num_sentences'])
