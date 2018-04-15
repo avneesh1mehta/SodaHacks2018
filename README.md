@@ -1,6 +1,8 @@
 # SodaHacks2018
 
-We created a Django app that allows users to input long text blobs and receive summaries of a specified length.
+For our SodaHacks 2018 project, we created a Django app that allows users to input long text blobs and receive summaries of a specified length.
+
+![](./TestSummarizer.png?raw=true)
 
 ## Getting Started
 
@@ -44,7 +46,7 @@ So the persistent question about artificial intelligence -- or robots in common 
 
 ## Authors
 
-Avneesh Mehta and Shaurya Sanghavi
+Avneesh Mehta and Shaurya Sanghvi
 
 ## Acknowledgments
 
