@@ -1,27 +1,25 @@
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
-from django import forms
+from .forms import TextForm
+from .summarizer import Summarizer
 
-class NameForm(forms.Form):
-    your_name = forms.CharField(label='Your name', max_length=100)
 
 def index(request):
 	return render(request, 'summarizer/index.html')
 
-def get_name(request):
+def summarize(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
-        form = NameForm(request.POST)
+        print('\nPOST\n')
         # check whether it's valid:
+        form = TextForm(request.POST)
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
-            return HttpResponseRedirect('/thanks/')
+            summ = Summarizer().summary(form.cleaned_data['content'], form.cleaned_data['num_sentences'])
+            new_form = TextForm()
+            return HttpResponseRedirect('summarizer/index.html', dict(form=new_form, summary=summ))
+    else:
+        print('\nGET\n')
+        form = TextForm()
 
     # if a GET (or any other method) we'll create a blank form
-    else:
-        form = NameForm()
-
-    return render(request, 'name.html', {'form': form})
+    return render(request, 'summarizer/index.html', dict(form=form, summary=''))

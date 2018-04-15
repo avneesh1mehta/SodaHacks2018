@@ -18,6 +18,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('', include('summarizer.urls')),
+    path('summarize/', include('summarizer.urls')),
     path('admin/', admin.site.urls),
     path('summarizer/', include('summarizer.urls'))
 ]

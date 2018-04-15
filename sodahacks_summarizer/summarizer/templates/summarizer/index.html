@@ -6,60 +6,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="Avneesh Mehta and Shaurya Sanghavi" content="text summarizer">
 
-    <title>Landing Page - Start Bootstrap Theme</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="./vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="./vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template -->
-    <link href="./css/landing-page.min.css" rel="stylesheet">
+    <title>Summarizer</title>
 
   </head>
 
   <body>
-
-   
-
-    <!-- Masthead -->
-    <header class="masthead text-white text-center">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">Summarize that long ass reading assignment you have been procrastinating on!</h1>
-          </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form>
-              <div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                	<textarea placeholder="Enter your text..."></textarea>
-                  <!--<input type="email" class="form-control form-control-lg" placeholder="Enter your email...">-->
-                  <form action="/your-name/" method="post">
-    				{% csrf_token %}
- 					   {{ form }}
-    					<input type="submit" value="Submit" />
-					</form>
-
-                </div>
-                <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-block btn-lg btn-primary">Summarize!</button>
-                </div>
-              </div>
-            </form>
-          </div>
+    <div>
+      <form action="summarize/" method="post">
+        {% csrf_token %}
+        {{ form }}
+       </form>
+       <br>
+        <div>
+          <p>
+            {{ summary }}
+          </p>
         </div>
-      </div>
-    </header>
-
-    
-
+    </div>
   </body>
 
 </html>
