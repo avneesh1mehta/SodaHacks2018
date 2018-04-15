@@ -6,7 +6,7 @@ For our SodaHacks 2018 project, we created a Django app that allows users to inp
 
 ## Getting Started
 
-We spent MANY hours trying to get a Heroku demo app running, but there seems to be too many issues with it. We apologize for the inconvenience. These instructions will get you a copy of the project up and running on your local machine for testing purposes.
+We spent MANY hours trying to get a Heroku demo app running, but there seems to be too many issues with it. We apologize for the inconvenience. These instructions will get you a copy of the project up and running on your local machine for testing purposes. To start with, pull the repo to your local machine.
 
 ### Installing Dependencies
 
